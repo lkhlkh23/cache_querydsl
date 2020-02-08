@@ -6,4 +6,6 @@ public interface ExhibitionRepository {
 
     List<Exhibition> getExhibitionWithTheme(String theme);
 
+    int initDefaultThemeWhenNoDescription();
+
 }

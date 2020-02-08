@@ -19,6 +19,9 @@ public class ExhibitionRepositoryImplTest {
     @Autowired
     private ExhibitionRepository exhibitionRepository;
 
+    @Autowired
+    private ExhibitionJpaRepository exhibitionJpaRepository;
+
     @Test
     public void test_getExhibitionWithTheme_returnTwoExhibitionWhenPassingFoodTheme() {
         final String theme = "food";
@@ -28,6 +31,12 @@ public class ExhibitionRepositoryImplTest {
         assertEquals(exhibitionsWithThemes.get(0).getTheme(), theme);
 
         log.info("Exhibition : {}", exhibitionsWithThemes.toString());
+    }
 
+    @Test
+    public void test_initDefaultThemeWhenNoDescription_successWhenExistNullDescription() {
+        int countOfUpdated = exhibitionRepository.initDefaultThemeWhenNoDescription();
+
+        assertEquals(countOfUpdated, 3);
     }
 }

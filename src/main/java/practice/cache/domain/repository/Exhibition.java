@@ -21,4 +21,8 @@ public class Exhibition {
     public ExhibitionDto transferDto() {
         return new ExhibitionDto(exhibitionNo, title, description);
     }
+
+    public boolean isEmptyDescription() {
+        return description.equals("");
+    }
 }

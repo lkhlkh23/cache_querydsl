@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
 
 @Configuration
 @EnableJpaRepositories(basePackages = {"practice.cache.domain.repository"})
@@ -17,8 +18,12 @@ public class DataBaseConfig {
 
     @Bean
     public JPAQueryFactory jpaQueryFactory() {
-        System.out.println(entityManager == null ? "NNNN" : "NOT nULL");
         return new JPAQueryFactory(entityManager);
+    }
+
+    @Bean
+    public CriteriaBuilder criteriaBuilder() {
+        return entityManager.getCriteriaBuilder();
     }
 
 }

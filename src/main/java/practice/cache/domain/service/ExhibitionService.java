@@ -8,4 +8,10 @@ public interface ExhibitionService {
 
     List<ExhibitionDto> getExhibitionWithTheme(String theme) throws InterruptedException;
 
+    void criteriaUpdate();
+
+    void jpaUpdate();
+
+    void jpqlUpdate();
+
 }

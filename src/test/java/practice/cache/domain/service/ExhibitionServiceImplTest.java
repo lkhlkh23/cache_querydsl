@@ -59,4 +59,19 @@ public class ExhibitionServiceImplTest {
 
         assertTrue(takenTime > 2);
     }
+
+    @Test
+    public void test_jpaUpdate() {
+        exhibitionService.jpaUpdate();
+    }
+
+    @Test
+    public void test_criteriaUpdate() {
+        exhibitionService.jpaUpdate();
+    }
+
+    @Test
+    public void test_jpqlUpdate() {
+        exhibitionService.jpqlUpdate();
+    }
 }
